@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" != "" ]; then
+    PORT=$1
+else
+    PORT=55555
+fi
+
+java -cp target/p1-0.0.1-SNAPSHOT-jar-with-dependencies.jar org.mines.p1.Server -p $PORT

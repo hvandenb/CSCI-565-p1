@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SERVER=$1
+PORT=$2
+COMMAND=$3
+FILE=$4
+
+if [ "$FILE" != "" ]; then
+    FILEOPT="-f"
+else
+    FILEOPT=" "
+fi
+
+java -cp target/p1-0.0.1-SNAPSHOT-jar-with-dependencies.jar org.mines.p1.Client -p $PORT -s $SERVER -c $COMMAND $FILEOPT $FILE
